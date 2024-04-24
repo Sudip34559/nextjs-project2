@@ -1,27 +1,49 @@
 "use client";
 import React, { useState } from "react";
+import { slides } from "../utils/slides";
 
 const ImageSlider = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
 
   const slides = [
-    "https://via.placeholder.com/600x400?text=Slide+1",
-    "https://via.placeholder.com/600x400?text=Slide+2",
-    "https://via.placeholder.com/600x400?text=Slide+3",
-    "https://via.placeholder.com/600x400?text=Slide+4",
-    "https://via.placeholder.com/600x400?text=Slide+5",
-    "https://via.placeholder.com/600x400?text=Slide+6",
-    "https://via.placeholder.com/600x400?text=Slide+7",
-    "https://via.placeholder.com/600x400?text=Slide+8",
+    {
+      url: "/img/f7.jpg",
+      name: "Indian",
+    },
+    {
+      url: "/img/360_F_192008611_KrKZcq3NyiNSksLVPc76SQyBeXOfq1o0.jpg",
+      name: "USA",
+    },
+    {
+      url: "/img/top-view-table-full-food_23-2149209252.avif",
+      name: "England",
+    },
+    {
+      url: "/img/France_Blog_6.jpg",
+      name: "France",
+    },
+    {
+      url: "/img/istockphoto-1300135479-612x612.jpg",
+      name: "Japan",
+    },
+    {
+      url: "/img/Egyptian-Food-Trips-in-Egypt.jpg",
+      name: "Egypt",
+    },
+    {
+      url: "/img/Screenshot 2024-04-24 at 21.55.08.png",
+      name: "Italy",
+    },
+    {
+      url: "/img/russian-food-scaled.jpg",
+      name: "Russia",
+    },
   ];
 
   const rotateAngle = (360 / slides.length) * currentSlide;
 
   const handleNextSlide = () => {
     setCurrentSlide((prevSlide) => (prevSlide + 1) % slides.length);
-  };
-  const handlePrevSlide = () => {
-    setCurrentSlide((prevSlide) => (prevSlide - 1) % slides.length);
   };
 
   return (
@@ -94,24 +116,29 @@ const ImageSlider = () => {
           </div>
         </div>
         <div className="absolute top-[150px] xl:top-[240px] left-0 right-0 flex justify-center">
-          <div className="relative md:h-[500px] md:w-[600px] xl:h-[600px] xl:w-[700px] h-[400px] w-[500px]   ">
+          <div className="relative md:h-[500px] md:w-[600px] xl:h-[600px] xl:w-[700px] h-[400px] w-[500px] pt-6 md:pt-0  ">
             <button
-              className="absolute top-1/2 left-0 transform -translate-y-1/2"
-              onClick={handlePrevSlide}
-            >
-              Previous
-            </button>
-            <button
-              className="absolute top-1/2 right-0 transform -translate-y-1/2"
+              className="absolute py-3 text-2xl top-[170px] md:top-[200px] xl:top-[250px] right-[-30px] transform -translate-y-1/2 bg-white/[0.6] backdrop-blur-sm  text-white px-2  rounded-md z-[20]"
               onClick={handleNextSlide}
             >
-              Next
+              {`>`}
             </button>
-            <img
-              className="block w-full"
-              src={slides[currentSlide]}
-              alt={`Slide ${currentSlide + 1}`}
-            />
+            <div className="block md:w-[600px] md:h-[400px] w-[500px] h-[300px] xl:w-[700px]  xl:h-[500px] rounded-xl overflow-hidden relative">
+              <img
+                className="block w-full h-full"
+                src={slides[currentSlide].url}
+                alt={`Slide ${currentSlide + 1}`}
+              />
+              <div className="absolute w-full h-full top-0  flex justify-center flex-col gap-3 items-center bg-black/[0.3]">
+                <h3 className=" text-center text-3xl xl:text-5xl md:text-4xl font-bold bg-clip-text text-transparent bg-gradient-to-b from-green-500 to-green-700">
+                  Try our {slides[currentSlide].name} delicacy
+                </h3>
+                <button className="px-4 py-2 backdrop-blur-sm border bg-black/[0.6] border-emerald-500/20 text-white mx-auto text-center rounded-full relative mt-4">
+                  <span>View now →</span>
+                  <div className="absolute inset-x-0  h-px -bottom-px bg-gradient-to-r w-3/4 mx-auto from-transparent via-emerald-500 to-transparent" />
+                </button>
+              </div>
+            </div>
           </div>
         </div>
       </div>
