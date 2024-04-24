@@ -6,7 +6,7 @@ import Image from "next/image";
 import { grid } from "./ui/background-gradient";
 export function GradientCard() {
   return (
-    <div className="w-full flex justify-center pt-16 ">
+    <div className="w-full flex justify-center py-16 ">
       <BackgroundGradient />
     </div>
   );
