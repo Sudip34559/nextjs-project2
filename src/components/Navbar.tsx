@@ -15,7 +15,7 @@ function Navbar({ className }: { className?: string }) {
     <>
       <div
         className={cn(
-          "fixed top-10 inset-x-0  w-full rounded-full  z-50",
+          "fixed top-5 inset-x-0  w-full rounded-full  z-50",
           className
         )}
       >
@@ -23,7 +23,7 @@ function Navbar({ className }: { className?: string }) {
           <div className="flex gap-6 h-full items-center flex-1 justify-between  max-w-[1060px]">
             <Link href={"#"} className="">
               <img
-                className="h-[85px]"
+                className="h-[85px] min-w-[81px]"
                 src="/img/download-1-removebg-preview.png"
                 alt=""
               />
