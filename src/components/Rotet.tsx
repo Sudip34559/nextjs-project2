@@ -47,7 +47,7 @@ const ImageSlider = () => {
   };
 
   return (
-    <div className=" relative w-full flex justify-evenly pb-10 h-[700px] xl:h-[1000px]">
+    <div className=" relative w-full flex justify-evenly  h-[700px] md:h-[800px] xl:h-[1000px]">
       <div className="lg:w-[50%] w-full lg:min-w-[700px] min-w-[500px] flex justify-center items-center relative">
         <div
           className="md:w-[600px] md:h-[600px] xl:w-[700px] xl:h-[700px] w-[500px] h-[500px]  bg-blue-500 rounded-full 
